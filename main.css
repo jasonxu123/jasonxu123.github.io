@@ -1,9 +1,54 @@
+.pure-menu-link {
+    padding: 0.2em 0.5em;
+}
+
 html, body {
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
+    /*width: 100%;*/
+    /*margin: 0px;*/
+    /*padding: 0px;*/
     overflow-x: hidden;
-    font-size: 16px;
+    /*font-size: 120%;*/
     font-family: "Open Sans", sans-serif;
+    /*text-align: center;*/
+    
+}
+
+.top-bar {
+    padding-top: 0.5em;
     text-align: center;
+    width: 100%;
+    /* includes padding in width */
+    /*box-sizing: border-box;*/
+}
+
+.top-name {
+    font-size: 1.6em;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    display: none;
+    padding: 0.1em;
+}
+
+.menu-name {
+    font-weight: 600;
+}
+
+@media (min-width: 48em) {
+    .pure-menu-link {
+        padding: 0.2em 1em;
+    }
+    
+    /* Increase the body font size */
+    body {
+        /*font-size: 120%;*/
+    }
+    
+    .top-name {
+        display: block;
+    }
+    
+    .menu-name {
+        display: none !important;
+    }
 }
