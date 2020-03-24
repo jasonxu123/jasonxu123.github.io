@@ -10,11 +10,11 @@ html, body {
     /*font-size: 120%;*/
     font-family: "Open Sans", sans-serif;
     /*text-align: center;*/
+    scrollbar-width: none; /* Firefox */
 }
 
 body {
     overflow-y: scroll;
-    scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
 body::-webkit-scrollbar { /* WebKit */
@@ -37,7 +37,7 @@ body::-webkit-scrollbar { /* WebKit */
     font-size: 1.6em;
     text-transform: uppercase;
     font-weight: 600;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
     display: none;
     padding: 0.1em;
 }
@@ -48,6 +48,7 @@ body::-webkit-scrollbar { /* WebKit */
 
 p {
     margin: 0;
+    font-weight: 300;
 }
 
 @media (min-width: 48em) {
