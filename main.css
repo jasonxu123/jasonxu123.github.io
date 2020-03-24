@@ -10,15 +10,27 @@ html, body {
     /*font-size: 120%;*/
     font-family: "Open Sans", sans-serif;
     /*text-align: center;*/
-    
+}
+
+body {
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+body::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
 }
 
 .top-bar {
     padding-top: 0.5em;
+    padding-bottom: 0.2em;
     text-align: center;
     width: 100%;
-    /* includes padding in width */
-    /*box-sizing: border-box;*/
+    border-bottom-width: 0.1em;
+    border-bottom-style: solid;
+    background-color: white;
+    z-index: 10;
 }
 
 .top-name {
@@ -32,6 +44,10 @@ html, body {
 
 .menu-name {
     font-weight: 600;
+}
+
+p {
+    margin: 0;
 }
 
 @media (min-width: 48em) {
