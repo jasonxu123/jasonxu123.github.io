@@ -22,6 +22,14 @@ body::-webkit-scrollbar { /* WebKit */
     height: 0;
 }
 
+/*
+ * -- as of now, NO WAY to set responsive height without JS --
+ * spacing height: mobile > 3.15em, laptop > 5.05em
+ */
+.top-bar-spacer {
+    height: 3.15em;
+}
+
 .top-bar {
     padding-top: 0.5em;
     padding-bottom: 0.2em;
@@ -31,6 +39,7 @@ body::-webkit-scrollbar { /* WebKit */
     border-bottom-style: solid;
     background-color: white;
     z-index: 10;
+    transition-duration: 0.2s;
 }
 
 .top-name {
@@ -49,6 +58,7 @@ body::-webkit-scrollbar { /* WebKit */
 p {
     margin: 0;
     font-weight: 300;
+    background-color: antiquewhite;
 }
 
 @media (min-width: 48em) {
@@ -56,9 +66,8 @@ p {
         padding: 0.2em 1em;
     }
     
-    /* Increase the body font size */
-    body {
-        /*font-size: 120%;*/
+    .top-bar-spacer {
+        height: 5.05em;
     }
     
     .top-name {

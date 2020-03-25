@@ -10,9 +10,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JX</title>
+
+    <script>
+        window.onscroll = function() { topBarFade() };
+
+        function topBarFade() {
+            // don't fade for screens too small, e.g. mobile
+            if (window.matchMedia("screen and (max-width: 48em)").matches) {
+                return;
+            }
+            const topBarHeight = document.getElementById("topBar").clientHeight;
+            if (window.scrollY / topBarHeight < 0.95) {
+                document.getElementById("topBar").style.opacity =
+                    1 - (window.scrollY / topBarHeight);
+            } else {
+                document.getElementById("topBar").style.opacity = 0.05;
+            }
+        }
+
+        function topBarHover() {
+            document.getElementById("topBar").style.opacity = 1;
+        }
+
+    </script>
 </head>
 <body>
-    <div class="top-bar pure-menu-fixed">
+    <div class="top-bar-spacer">&nbsp;</div>
+    <div id="topBar" class="top-bar pure-menu-fixed" onmouseover="topBarHover()" onmouseout="topBarFade()">
         <a class="top-name pure-menu-heading" href="#">Jason Xu</a>
         <div class="pure-menu-horizontal">
             <a class="menu-name pure-menu-heading" href="#">Jason Xu</a>
