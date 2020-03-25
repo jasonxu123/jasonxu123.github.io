@@ -12,31 +12,28 @@
     <title>JX</title>
 
     <script>
-        window.onscroll = function() { topBarFade() };
-
-        function topBarFade() {
+        function topBarFade(topBar) {
             // don't fade for screens too small, e.g. mobile
             if (window.matchMedia("screen and (max-width: 48em)").matches) {
                 return;
             }
-            const topBarHeight = document.getElementById("topBar").clientHeight;
-            if (window.scrollY / topBarHeight < 0.95) {
-                document.getElementById("topBar").style.opacity =
-                    1 - (window.scrollY / topBarHeight);
+
+            if (window.scrollY / topBar.clientHeight < 0.5) {
+                topBar.style.opacity = 1;
             } else {
-                document.getElementById("topBar").style.opacity = 0.05;
+                topBar.style.opacity = 0.05;
             }
         }
 
-        function topBarHover() {
-            document.getElementById("topBar").style.opacity = 1;
+        function topBarHover(topBar) {
+            topBar.style.opacity = 1;
         }
 
     </script>
 </head>
 <body>
     <div class="top-bar-spacer">&nbsp;</div>
-    <div id="topBar" class="top-bar pure-menu-fixed" onmouseover="topBarHover()" onmouseout="topBarFade()">
+    <div id="topBar" class="top-bar pure-menu-fixed" onmouseover="topBarHover(this)" onmouseout="topBarFade(this)">
         <a class="top-name pure-menu-heading" href="#">Jason Xu</a>
         <div class="pure-menu-horizontal">
             <a class="menu-name pure-menu-heading" href="#">Jason Xu</a>
@@ -49,5 +46,12 @@
         </div>
     </div>
     <p style="font-size: 300px;">hi there this is text</p>
+
+    <script>
+        document.addEventListener("scroll", (evt) => {
+            const topBar = document.getElementById("topBar");
+            topBarFade(topBar);
+        }, {capture: false, passive: true});
+    </script>
 </body>
 </html>
