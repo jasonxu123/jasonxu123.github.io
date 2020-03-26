@@ -1,31 +1,26 @@
 html, body {
-    /*width: 100%;*/
-    /*margin: 0px;*/
-    /*padding: 0px;*/
     overflow-x: hidden;
-    /*font-size: 120%;*/
     font-family: "Open Sans", sans-serif;
-    /*text-align: center;*/
     scrollbar-width: none; /* Firefox */
 
-/*    animation: fadein 1.5s;*/
+    animation: fadein 1s;
 }
 
 body {
     overflow-y: scroll;
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
+
 body::-webkit-scrollbar { /* WebKit */
     width: 0;
     height: 0;
 }
 
-/*
 @keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+    0% { opacity: 0; }
+    25% { opacity: 0; }
+    100%   { opacity: 1; }
 }
-*/
 
 /*
  * -- as of now, NO WAY to set responsive height without JS --
