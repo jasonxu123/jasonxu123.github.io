@@ -9,49 +9,39 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JX</title>
+    <title>Jason Xu</title>
 
-    <script>
-        function topBarFade(topBar) {
-            // don't fade for screens too small, e.g. mobile
-            if (window.matchMedia("screen and (max-width: 48em)").matches) {
-                return;
-            }
-
-            if (window.scrollY / topBar.clientHeight < 0.5) {
-                topBar.style.opacity = 1;
-            } else {
-                topBar.style.opacity = 0.05;
-            }
-        }
-
-        function topBarHover(topBar) {
-            topBar.style.opacity = 1;
-        }
-
-    </script>
+    <script src="topbar.js"></script>
 </head>
 <body>
-    <div class="top-bar-spacer">&nbsp;</div>
-    <div id="topBar" class="top-bar pure-menu-fixed" onmouseover="topBarHover(this)" onmouseout="topBarFade(this)">
-        <a class="top-name pure-menu-heading" href="#">Jason Xu</a>
-        <div class="pure-menu-horizontal">
-            <a class="menu-name pure-menu-heading" href="#">Jason Xu</a>
+    <div id="topBarSpacer">&nbsp;</div>
+    <div id="topBar" class="pure-menu-fixed" onmouseover="topBarHover(this)" onmouseout="topBarFade(this)">
+        <div id="topNameWrapper" class="pure-menu-horizontal">
             <ul class="pure-menu-list">
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">resume</a></li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">career</a></li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">fun</a></li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">photos</a></li>
+                <a id="topName" class="pure-menu-heading" href="#">Jason Xu</a>
+            </ul>
+        </div>
+
+        <div class="pure-menu-horizontal">
+            <a id="topMenuName" class="pure-menu-heading" href="#">Jason Xu</a>
+            <ul id="topMenuList" class="pure-menu-list">
+                <li class="pure-menu-item">
+                    <input type="radio" id="careerTab" name="menu-tab-group" checked>
+                    <label for="careerTab" class="pure-menu-link">work</label>
+                </li>
+                <li class="pure-menu-item">
+                    <input type="radio" id="expTab" name="menu-tab-group">
+                    <label for="expTab" class="pure-menu-link">extras</label>
+                </li>
+                <li class="pure-menu-item">
+                    <input type="radio" id="photosTab" name="menu-tab-group">
+                    <label for="photosTab" class="pure-menu-link">
+                        <img id="imageIcon" class="pure-img" src="image_icon.svg">
+                    </label>
+                </li>
             </ul>
         </div>
     </div>
     <p style="font-size: 300px;">hi there this is text</p>
-
-    <script>
-        document.addEventListener("scroll", (evt) => {
-            const topBar = document.getElementById("topBar");
-            topBarFade(topBar);
-        }, {capture: false, passive: true});
-    </script>
 </body>
 </html>
