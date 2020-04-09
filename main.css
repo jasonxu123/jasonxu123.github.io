@@ -27,7 +27,7 @@ body::-webkit-scrollbar { /* WebKit */
  * spacing height: mobile > 3.15em, laptop > 5.05em
  */
 #topBarSpacer {
-    height: 3.15em;
+    height: 3.25em;
 }
 
 #topBar {
@@ -114,7 +114,7 @@ p {
     }
     
     #topBarSpacer {
-        height: 5.05em;
+        height: 6.2em;
     }
     
     #topNameWrapper {
